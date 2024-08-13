@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #111127;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+svg path {
+    --ease: ease-out;
+    --dur: 0.3s;
+    stroke: rgba(234, 228, 255, 0.15);
+    stroke-width: 0.8px;
+    fill: rgba(255, 255, 255, 0.08);
+    transition: stroke var(--dur) var(--ease), fill var(--dur) var(--ease);
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+svg path.has-data {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+svg path:hover {
+    stroke: rgba(234, 228, 255, 0.3);
+    fill: rgba(255, 255, 255, 0.10);
+}
+
+svg path.active,
+svg path.active:hover {
+    stroke: rgba(234, 228, 255, 0.5);
+    fill: rgba(255, 255, 255, 0.15);
+    cursor: default;
+}
