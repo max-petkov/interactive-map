@@ -14,6 +14,7 @@ section {
     width: 100%;
     padding: 80px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -55,4 +56,47 @@ svg path.active:hover {
     stroke: rgba(234, 228, 255, 0.5);
     fill: rgba(255, 255, 255, 0.15);
     cursor: default;
+}
+
+/* Not Important (only custom attr will be reused in WF) */
+[data-state-name] {
+    color: #F9F9FB;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.info {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    color: #fff;
+    max-width: 500px;
+    width: 100%;
+}
+
+.info .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info .row .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info .row .wrapper .name {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.info .row .wrapper .value {
+    color: #F9F9FB;
+    font-size: 20px;
 }
