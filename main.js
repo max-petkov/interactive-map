@@ -18,14 +18,14 @@ class ParenMap {
     this.utilizationRate = document.querySelector("[data-utilization-rate]");
     this.healthScoreAvg = document.querySelector("[data-health-score-avg]");
     this.dataChargingTimeAvg = document.querySelector("[data-charging-time-avg]");
-    
   }
 
   fetchData() {
     fetch(this.url)
       .then((res) => res.json())
       .then((res) => {
-        this.data = res.countries[0].states;
+        console.log(res);
+        this.data = res;
         this.ready();
       })
       .catch((err) => {
@@ -36,7 +36,7 @@ class ParenMap {
 
   checkAvailableStatesData() {
     this.states.forEach((state) => {
-      this.data.forEach((data) => {
+      this.data.countries[0].states.forEach((data) => {
         if (state.id.toLowerCase() === data.stateCode.toLowerCase())
           state.classList.add("has-data");
       });
@@ -44,29 +44,57 @@ class ParenMap {
   }
 
   showStatesDataOnClick() {
-    this.map.addEventListener("click", (e) => {
-        if (e.target.classList.contains("has-data")) {
-          this.data.forEach((data) => {
-            if (data.stateCode.toLowerCase() === e.target.id.toLowerCase()) {
-                console.log(data);
-                
-              this.stateName.textContent = data.state;
-              this.stations.textContent = data.stations.count;
-              this.stationsUpcoming.textContent = data.stations.upcoming;
-              this.ports.textContent = data.ports.count;
-              this.portsNeviFunded.textContent = data.ports.funding.nevi;
-              this.utilizationRate.textContent = data.utilization.current + "%";
-              this.dataChargingTimeAvg.textContent = data.chargingTime.avg + " min";
+
+    this.states.forEach(state => {        
+        if (!state.classList.contains("has-data")) return;
+
+        state.addEventListener("click", () => {
+            console.log("click");
+            
+            if(state.classList.contains("active")) return;
+        
+            this.data.countries[0].states.forEach((data) => {
+            if (data.stateCode.toLowerCase() === state.id.toLowerCase()) {
+                this.map.nextElementSibling.classList.remove("active");
+                if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
+                state.classList.add("active");
+
+                this.stateName.textContent = data.state;
+                this.stations.textContent = data.stations.count;
+                this.stationsUpcoming.textContent = data.stations.upcoming;
+                this.ports.textContent = data.ports.count;
+                this.portsNeviFunded.textContent = data.ports.funding.nevi;
+                this.utilizationRate.textContent = data.utilization.current + "%";
+                this.dataChargingTimeAvg.textContent = data.chargingTime.avg + " min";
             }
-          });
-        }
-      }
-    );
+            });
+            });
+    });
+  }
+
+  showUSADataOnClick() {
+    // ⚡ TBD
+    document
+      .querySelector("[data-btn-usa-summary]")
+      .addEventListener("click", () => {
+        if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
+        this.map.nextElementSibling.classList.add("active");
+
+        this.stateName.textContent = this.data.countries[0].country;
+        this.stations.textContent = this.data.countries[0].stations.count;
+        this.stationsUpcoming.textContent = this.data.countries[0].stations.upcoming;
+        this.ports.textContent = this.data.countries[0].ports.count;
+        this.portsNeviFunded.textContent = this.data.countries[0].ports.funding.nevi;
+        this.utilizationRate.textContent = this.data.countries[0].utilization.current + "%";
+        this.dataChargingTimeAvg.textContent = this.data.countries[0].chargingTime.avg + " min";
+
+      });
   }
 
   ready() {
     this.checkAvailableStatesData();
     this.showStatesDataOnClick();
+    this.showUSADataOnClick(); // ⚡ TBD
     this.cbReady();
   }
 
@@ -82,7 +110,27 @@ class ParenMap {
 const mapUSA = new ParenMap("#usa-map", {
   url: "./json/statechart.json",
   onReady: function () {
-    console.log("Ready ⚡");    
+
+    // Need Refactoring Search Input
+    const states = [];
+    mapUSA.data.countries[0].states.forEach(state => {
+        states.push({value: state.stateCode.toUpperCase(), text: state.state});
+    });    
+    
+    const search = new TomSelect('#select-state', {
+        options: states,
+        maxItems: 1,
+        onChange: function(state) {
+            search.clear();
+            if(!state) return;
+            if(mapUSA.map.querySelector("#" + state.toUpperCase()).classList.contains("active")) return;
+            
+            mapUSA.map.querySelector("#" + state.toUpperCase()).dispatchEvent(new Event("click"));
+            
+        }
+    });
+    // Need Refactoring Search Input
+    
   },
 });
 

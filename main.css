@@ -14,24 +14,26 @@ section {
     width: 100%;
     padding: 80px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 128px;
 }
 
 .container {
+    --ease: ease-out;
+    --dur: 0.2s;
+
     max-width: 800px;
     width: 100%;
+    position: relative;
 }
 
-svg {
+#usa-map {
     width: 100%;
     height: auto;
 }
 
-svg path {
-    --ease: ease-out;
-    --dur: 0.3s;
+#usa-map path {
     stroke: rgba(234, 228, 255, 0.15);
     stroke-width: 0.8px;
     fill: rgba(255, 255, 255, 0.08);
@@ -41,41 +43,137 @@ svg path {
     pointer-events: none;
 }
 
-svg path.has-data {
+#usa-map path.has-data {
     pointer-events: auto;
     opacity: 1;
 }
 
-svg path:hover {
+#usa-map path:hover {
     stroke: rgba(234, 228, 255, 0.3);
     fill: rgba(255, 255, 255, 0.10);
 }
 
-svg path.active,
-svg path.active:hover {
+#usa-map path.active,
+#usa-map path.active:hover {
     stroke: rgba(234, 228, 255, 0.5);
     fill: rgba(255, 255, 255, 0.15);
     cursor: default;
 }
 
+.usa-map-outline {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.usa-map-outline path {
+    stroke: transparent;
+    transition: stroke var(--dur) var(--ease);
+}
+
+.usa-map-outline.active path {
+    stroke: rgba(234, 228, 255, 0.5);
+}
+
+/* Search Tom Select */
+.ts-wrapper {
+    width: 100%;
+    max-width: 350px;
+}
+
+.ts-wrapper .ts-control {
+    font-family: inherit;
+    padding: 13px 16px;
+    border-radius: 50px;
+    border: 1px solid #4B4D63;
+    background-color: transparent !important;
+}
+
+.ts-control, .ts-wrapper.single.input-active .ts-control{
+    background-color: transparent;
+
+}
+
+.ts-wrapper .ts-control input{
+    color: #fff;
+}
+
+.ts-wrapper .ts-control input::placeholder {
+    color: #4B4D63;
+    font-weight: 600;
+}
+
+.ts-wrapper .ts-dropdown {
+    background-color: transparent;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #373851;
+    color: #F9F9FB;
+}
+
+.ts-wrapper .ts-dropdown:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 39, 0.50);
+    -webkit-backdrop-filter: blur(1.4px);
+    backdrop-filter: blur(1.4px);
+}
+
+.ts-wrapper .ts-dropdown .no-results {
+    padding: 10px 16px;
+}
+
+.ts-wrapper .ts-dropdown .option {
+    padding: 10px 16px;
+}
+
+.ts-wrapper .ts-dropdown .option:hover,
+.ts-wrapper .ts-dropdown .option.active {
+    background-color: #21214a7e;
+    color: #F9F9FB;
+}
+
 /* Not Important (only custom attr will be reused in WF) */
+.wrapper-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
 [data-state-name] {
     color: #F9F9FB;
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 500;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
 }
 
 .info {
-    margin-top: 48px;
+    /* margin-top: 48px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 32px;
     color: #fff;
-    max-width: 500px;
-    width: 100%;
+    width: 420px;
 }
 
 .info .row {
@@ -83,6 +181,10 @@ svg path.active:hover {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+}
+
+.info .row .col {
+    width: 33%;
 }
 
 .info .row .wrapper {
@@ -99,4 +201,39 @@ svg path.active:hover {
 .info .row .wrapper .value {
     color: #F9F9FB;
     font-size: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    font-size: inherit;
+    color: #FFFFFF;
+    background-color: #6100FF;
+    width: max-content;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #4901be;
+}
+
+.btn--outline {
+    border: 1px solid #4B4D63;
+    background-color: transparent;
+}
+
+.btn--outline:hover {
+    background-color: #1d1d42;
+}
+
+.inputs {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: space-evenly;
 }
