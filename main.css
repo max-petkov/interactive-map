@@ -162,18 +162,16 @@ section {
     color: #F9F9FB;
     font-size: 48px;
     font-weight: 500;
-    /* margin-bottom: 32px; */
 }
 
 .info {
-    /* margin-top: 48px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 32px;
     color: #fff;
-    width: 420px;
+    width: 400px;
 }
 
 .info .row {
