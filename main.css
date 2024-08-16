@@ -14,11 +14,25 @@ section {
     width: 100%;
     padding: 80px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 128px;
 }
 
+/* Chart */
+.charts {
+    max-width: 470px;
+    max-height: 260px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+.chart-wrapper {
+    width: 470px !important;
+    height: 260px !important;
+}
+
+/* Map */
 .container {
     --ease: ease-out;
     --dur: 0.2s;
@@ -143,6 +157,14 @@ section {
 }
 
 /* Not Important (only custom attr will be reused in WF) */
+.splide__pagination {
+    bottom: -1.5em;
+}
+
+.splide__pagination__page {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
 .wrapper-map {
     display: flex;
     flex-direction: column;
@@ -171,7 +193,7 @@ section {
     justify-content: center;
     gap: 32px;
     color: #fff;
-    width: 400px;
+    width: 450px;
 }
 
 .info .row {

@@ -5,11 +5,15 @@ class ParenMap {
     this.map = typeof map === "object" ? map : document.querySelector(map);
     this.states = this.map.querySelectorAll("path");
     this.url = config.url;
+    this.splide = null;
     this.data = null;
     this.search = null;
     this.searchableStates = [];
+    this.utilizationChart = null;
     this.utilizationChartValues = {xAxis: null, data: null};
+    this.chargingChart = null;
     this.chargingChartValues = {xAxis: null, data: null};
+    this.sessionsChart = null;
     this.sessionsChartValues = {xAxis: null, data: null};
     this.cbReady = config.onReady || function () {};
     this.cbError = config.onError || function () {};
@@ -63,24 +67,9 @@ class ParenMap {
                 if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
                 state.classList.add("active");
 
-                this.stateName.textContent = data.state;
-                this.stations.textContent = data.stations.count;
-                this.stationsUpcoming.textContent = data.stations.upcoming;
-                this.ports.textContent = data.ports.count;
-                this.portsNeviFunded.textContent = data.ports.funding.nevi;
-                this.utilizationRate.textContent = data.utilization.current + "%";
-                this.dataChargingTimeAvg.textContent = data.chargingTime.avg + " min";
-
-
-              // Refactor
-              this.utilizationChartValues.xAxis = data.utilization.xAxis.split(",");
-              this.utilizationChartValues.data = data.utilization.data.split(",");          
-              this.chargingChartValues.xAxis = data.chargingTime.xAxis.split(",");
-              this.chargingChartValues.data = data.chargingTime.data.split(",");          
-              this.sessionsChartValues.xAxis = data.sessions.xAxis.split(",");
-              this.sessionsChartValues.data = data.sessions.data.split(","); 
-
-              this.addCharts();
+                this.renderData(data);
+                this.setChartValues(data);
+                this.addCharts();
             }
             });
             });
@@ -95,22 +84,8 @@ class ParenMap {
         if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
         this.map.nextElementSibling.classList.add("active");
 
-        this.stateName.textContent = this.data.countries[0].country;
-        this.stations.textContent = this.data.countries[0].stations.count;
-        this.stationsUpcoming.textContent = this.data.countries[0].stations.upcoming;
-        this.ports.textContent = this.data.countries[0].ports.count;
-        this.portsNeviFunded.textContent = this.data.countries[0].ports.funding.nevi;
-        this.utilizationRate.textContent = this.data.countries[0].utilization.current + "%";
-        this.dataChargingTimeAvg.textContent = this.data.countries[0].chargingTime.avg + " min";
-
-        // Refactor
-        this.utilizationChartValues.xAxis = this.data.countries[0].utilization.xAxis.split(",");
-        this.utilizationChartValues.data = this.data.countries[0].utilization.data.split(",");          
-        this.chargingChartValues.xAxis = this.data.countries[0].chargingTime.xAxis.split(",");
-        this.chargingChartValues.data = this.data.countries[0].chargingTime.data.split(",");          
-        this.sessionsChartValues.xAxis = this.data.countries[0].sessions.xAxis.split(",");
-        this.sessionsChartValues.data = this.data.countries[0].sessions.data.split(","); 
-
+        this.renderData(this.data.countries[0], true);
+        this.setChartValues(this.data.countries[0]);
         this.addCharts();
 
       });
@@ -133,119 +108,140 @@ class ParenMap {
   }
 
   addCharts() {
-    // Refactoring
-
-    const ctx1 = new Chart(document.getElementById('utilization-chart'), {
+    if(this.utilizationChart) this.utilizationChart.destroy();
+    if(this.chargingChart) this.chargingChart.destroy();
+    if(this.sessionsChart) this.sessionsChart.destroy();
+    
+    this.utilizationChart = new Chart(document.getElementById('utilization-chart'), {
       type: 'line',
-      data: {
+      data: this.setChartData({
+        label: "Utilization",
         labels: this.utilizationChartValues.xAxis,
-        datasets: [{
-          data: this.utilizationChartValues.data,
-          borderWidth: 1,
-          borderColor: ["#6100FF"],
-          fill: true,
-          backgroundColor: 'rgba(61, 75, 224, 0.07)',
-          tension: 0.05,
-          pointRadius: 3.5,
-          pointBackgroundColor: "#6100FF",
-          pointBorderColor: "#000000",
-        }]
-      },
-      options: {
-        scales: {
-          y: { 
-            grid: {color: '#4B4D63'},
-            border: { dash: [4, 5]},  
-            beginAtZero: true,
-            ticks: { color: "#4B4D63" },
-            suggestedMax: 40
-           },
-           x: {
-            grid: {color: "rgba(0, 0, 0, 0)"},
-            ticks: {display: false}
-           }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: { enabled: false }
-        }
-      }
+        data: this.utilizationChartValues.data,
+      }),
+      options: this.setChartOptions({})
     });
-
-
-    const ctx2 = new Chart(document.getElementById('charging-chart'), {
-      type: 'line',
-      data: {
-        labels: this.chargingChartValues.xAxis,
-        datasets: [{
+    
+      this.chargingChart = new Chart(document.getElementById('charging-chart'), {
+        type: 'line',
+        data: this.setChartData({
+          label: "Charging time",
+          labels: this.chargingChartValues.xAxis,
           data: this.chargingChartValues.data,
-          borderWidth: 1,
-          borderColor: ["#22C55D"],
-          fill: true,
-          backgroundColor: 'rgba(23, 183, 134, 0.07)',
-          tension: 0.05,
-          pointRadius: 3.5,
-          pointBackgroundColor: "#22C55D",
-          pointBorderColor: "#000000",
-        }]
-      },
-      options: {
-        scales: {
-          y: { 
-            grid: {color: '#4B4D63'},
-            border: { dash: [4, 5]},  
-            beginAtZero: true,
-            ticks: { color: "#4B4D63" },
-            suggestedMax: 40
-           },
-           x: {
-            grid: {color: "rgba(0, 0, 0, 0)"},
-            ticks: {display: false}
-           }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: { enabled: false }
-        }
-      }
-    });
+          primaryColor: "#22C55D",
+          bgColor: "rgba(23, 183, 134, 0.07)",
+        }),
+        options: this.setChartOptions({})
+      });
 
-    const ctx3 = new Chart(document.getElementById('sessions-chart'), {
-      type: 'line',
-      data: {
-        labels: this.sessionsChartValues.xAxis,
-        datasets: [{
+      this.sessionsChart = new Chart(document.getElementById('sessions-chart'), {
+        type: 'line',
+        data: this.setChartData({
+          label: "Sessions",
+          labels: this.sessionsChartValues.xAxis,
           data: this.sessionsChartValues.data,
-          borderWidth: 1,
-          borderColor: ["#6100FF"],
-          fill: true,
-          backgroundColor: 'rgba(61, 75, 224, 0.07)',
-          tension: 0.05,
-          pointRadius: 3.5,
-          pointBackgroundColor: "#6100FF",
-          pointBorderColor: "#000000",
-        }]
+        }),
+        options: this.setChartOptions({})
+      });
+  }
+
+  setChartData(config) {
+    return {
+      labels: config.labels,
+      datasets: [{
+        label: config.label ? config.label : "",
+        data: config.data,
+        borderWidth: config.borderWidth ? config.borderWidth : 1,
+        borderColor: [config.primaryColor ? config.primaryColor : "#6100FF"],
+        fill: config.fill ? config.fill : true,
+        backgroundColor: config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.07)",
+        tension: config.tension ? config.tension : 0.05,
+        pointRadius: config.pointRadius ? config.pointRadius : 3.5,
+        pointBackgroundColor: config.primaryColor ? config.primaryColor : "#6100FF",
+        pointBorderColor: config.pointBorderColor ? config.pointBorderColor : "#000000",
+      }]
+    };
+  }
+
+  setChartOptions(config) {
+    return {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: { 
+          grid: {color: config.color ? config.color : "#4B4D63"},
+          border: { dash: config.dash ? config.dash : [4, 5]},  
+          beginAtZero: config.beginAtZero ? config.beginAtZero : true,
+          ticks: { color: config.color ? config.color : "#4B4D63"},
+          suggestedMax: config.suggestedMax ? config.suggestedMax : 40,
+         },
+         x: {
+          grid: {color: "rgba(0, 0, 0, 0)"},
+          ticks: {display: false}
+         }
       },
-      options: {
-        scales: {
-          y: { 
-            grid: {color: '#4B4D63'},
-            border: { dash: [4, 5]},  
-            beginAtZero: true,
-            ticks: { color: "#4B4D63" },
-            suggestedMax: 40
-           },
-           x: {
-            grid: {color: "rgba(0, 0, 0, 0)"},
-            ticks: {display: false}
-           }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: { enabled: false }
-        }
+      plugins: {
+        legend: { display: false },
+        tooltip: { 
+          padding: 6,
+          footerFont: { weight: "regular"},
+          footerMarginTop: 10,
+          callbacks: {
+            title: (data) => {              
+              return data[0].dataset.label;
+            },
+            label: (data) => {     
+              return data.raw;
+            },
+            footer: (data) => {              
+              return this.setMonth(data[0].label.slice(4, 6)) + " " + data[0].label.slice(-2) + ", " + data[0].label.slice(0, 4);
+            }
+          }
+         }
       }
-    });
+    };
+  }
+
+  renderData(data, country = false) {
+    this.stateName.textContent = !country ? data.state : data.country;
+    this.stations.textContent = data.stations.count;
+    this.stationsUpcoming.textContent = data.stations.upcoming;
+    this.ports.textContent = data.ports.count;
+    this.portsNeviFunded.textContent = data.ports.funding.nevi;
+    this.utilizationRate.textContent = data.utilization.current + "%";
+    this.dataChargingTimeAvg.textContent = data.chargingTime.avg + " min";
+  }
+
+  setChartValues(data) {
+    this.utilizationChartValues.xAxis = data.utilization.xAxis.split(",");
+    this.utilizationChartValues.data = data.utilization.data.split(",");          
+    this.chargingChartValues.xAxis = data.chargingTime.xAxis.split(",");
+    this.chargingChartValues.data = data.chargingTime.data.split(",");          
+    this.sessionsChartValues.xAxis = data.sessions.xAxis.split(",");
+    this.sessionsChartValues.data = data.sessions.data.split(","); 
+  }
+
+  setMonth(n) {
+    if(n == "01") return "Jan.";
+    if(n == "02") return "Feb.";
+    if(n == "03") return "Mar.";
+    if(n == "04") return "Apr.";
+    if(n == "05") return "May";
+    if(n == "06") return "June";
+    if(n == "07") return "July";
+    if(n == "08") return "Aug.";
+    if(n == "09") return "Sept.";
+    if(n == "10") return "Oct.";
+    if(n == "11") return "Nov.";
+    if(n == "12") return "Dec.";
+  }
+
+  addSlider() {
+    this.splide = new Splide( ".splide", {
+      arrows: false,
+      gap: 16,
+    } );
+    this.splide.mount();
   }
 
   ready() {
@@ -253,7 +249,7 @@ class ParenMap {
     this.showStatesDataOnClick();
     this.showUSADataOnClick(); // ⚡ TBD
     this.addSearch();
-    // this.addCharts();
+    this.addSlider();
     this.cbReady();
   }
 

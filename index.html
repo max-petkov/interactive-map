@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css">
     <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="./main.css">
     <title>Paren</title>
 </head>
 <body>
@@ -153,15 +154,37 @@
                 </div>
             </div>
             <div class="charts">
-                <canvas id="utilization-chart"></canvas>
-                <canvas id="charging-chart"></canvas>
-                <canvas id="sessions-chart"></canvas>
+                    <!-- <canvas id="utilization-chart"></canvas>
+                    <canvas id="charging-chart"></canvas>
+                    <canvas id="sessions-chart"></canvas> -->
+                <div class="splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <div class="splide__slide">
+                                <div class="chart-wrapper">
+                                    <canvas id="utilization-chart"></canvas>
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="chart-wrapper">
+                                    <canvas id="charging-chart"></canvas>
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="chart-wrapper">
+                                    <canvas id="sessions-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
     </section>
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
