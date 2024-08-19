@@ -52,23 +52,23 @@ section {
     stroke-width: 0.8px;
     fill: rgba(255, 255, 255, 0.08);
     transition: stroke var(--dur) var(--ease), fill var(--dur) var(--ease);
-    cursor: pointer;
     opacity: 0.5;
-    pointer-events: none;
+    cursor: not-allowed;
 }
 
 #usa-map path.has-data {
     pointer-events: auto;
     opacity: 1;
+    cursor: pointer;
 }
 
-#usa-map path:hover {
+#usa-map path.has-data:hover {
     stroke: rgba(234, 228, 255, 0.3);
     fill: rgba(255, 255, 255, 0.10);
 }
 
-#usa-map path.active,
-#usa-map path.active:hover {
+#usa-map path.has-data.active,
+#usa-map path.has-data.active:hover {
     stroke: rgba(234, 228, 255, 0.5);
     fill: rgba(255, 255, 255, 0.15);
     cursor: default;
@@ -91,6 +91,28 @@ section {
 
 .usa-map-outline.active path {
     stroke: rgba(234, 228, 255, 0.5);
+}
+
+.usa-map-pins {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.usa-map-pins path {
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.2s ease-in, transform 0.3s ease-in;
+}
+
+.usa-map-pins path.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.2s ease-out, transform 0.3s ease-out;
 }
 
 /* Search Tom Select */

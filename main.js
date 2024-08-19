@@ -4,6 +4,7 @@ class ParenMap {
   constructor(map, config) {
     this.map = typeof map === "object" ? map : document.querySelector(map);
     this.states = this.map.querySelectorAll("path");
+    this.pins = document.querySelector(".usa-map-pins");
     this.url = config.url;
     this.splide = null;
     this.data = null;
@@ -54,7 +55,6 @@ class ParenMap {
   }
 
   showStatesDataOnClick() {
-
     this.states.forEach(state => {        
         if (!state.classList.contains("has-data")) return;
 
@@ -65,7 +65,9 @@ class ParenMap {
             if (data.stateCode.toLowerCase() === state.id.toLowerCase()) {
                 this.map.nextElementSibling.classList.remove("active");
                 if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
+                if(this.pins.querySelector("path.active")) this.pins.querySelector("path.active").classList.remove("active");
                 state.classList.add("active");
+                this.pins.getElementById(state.id.toUpperCase()).classList.add("active");
 
                 this.renderData(data);
                 this.setChartValues(data);
@@ -82,6 +84,7 @@ class ParenMap {
       .querySelector("[data-btn-usa-summary]")
       .addEventListener("click", () => {
         if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
+        if(this.pins.querySelector("path.active")) this.pins.querySelector("path.active").classList.remove("active");
         this.map.nextElementSibling.classList.add("active");
 
         this.renderData(this.data.countries[0], true);
