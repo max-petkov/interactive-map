@@ -148,9 +148,45 @@ class ParenMap {
       });
   }
 
+  setMonths(arr) {
+    return arr.reduce((acc, label) => {
+      if (acc.includes(this.monthText(label.slice(4, 6)))) {
+        acc.push("");
+      } else {
+        acc.push(this.monthText(label.slice(4, 6)));
+      }
+      return acc;
+    }, []);
+  }
+
+  distributeEvenly(arr) {
+    const nonEmptyElements = arr.filter(item => item !== '');
+    const emptySlots = arr.length - nonEmptyElements.length;
+    const gaps = nonEmptyElements.length - 1;
+    const baseGap = Math.floor(emptySlots / gaps);
+    const extraSlots = emptySlots % gaps;
+
+    let result = [];
+    let extraSlotUsed = 0;
+
+    nonEmptyElements.forEach((element, index) => {
+        result.push(element);
+
+        if (index < gaps) {
+            let gapSize = baseGap + (extraSlotUsed < extraSlots ? 1 : 0);
+            result.push(...Array(gapSize).fill(''));
+            extraSlotUsed++;
+        }
+    });
+
+    return result;
+}
+
   setChartData(config) {
+      console.log(this.setMonths(config.labels));
+
     return {
-      labels: config.labels,
+      labels: this.distributeEvenly(this.setMonths(config.labels)),
       datasets: [{
         label: config.label ? config.label : "",
         data: config.data,
@@ -158,7 +194,7 @@ class ParenMap {
         borderColor: [config.primaryColor ? config.primaryColor : "#6100FF"],
         fill: config.fill ? config.fill : true,
         backgroundColor: config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.07)",
-        tension: config.tension ? config.tension : 0.05,
+        tension: config.tension ? config.tension : 0.5,
         pointRadius: config.pointRadius ? config.pointRadius : 3.5,
         pointBackgroundColor: config.primaryColor ? config.primaryColor : "#6100FF",
         pointBorderColor: config.pointBorderColor ? config.pointBorderColor : "#000000",
@@ -180,7 +216,12 @@ class ParenMap {
          },
          x: {
           grid: {color: "rgba(0, 0, 0, 0)"},
-          ticks: {display: false}
+          ticks: { 
+            autoSkip: false,
+            align: "center",
+            maxRotation: 0,
+            minRotation: 0,
+          }
          }
       },
       plugins: {
@@ -195,9 +236,6 @@ class ParenMap {
             },
             label: (data) => {     
               return data.raw;
-            },
-            footer: (data) => {              
-              return this.setMonth(data[0].label.slice(4, 6)) + " " + data[0].label.slice(-2) + ", " + data[0].label.slice(0, 4);
             }
           }
          }
@@ -224,19 +262,19 @@ class ParenMap {
     this.sessionsChartValues.data = data.sessions.data.split(","); 
   }
 
-  setMonth(n) {
-    if(n == "01") return "Jan.";
-    if(n == "02") return "Feb.";
-    if(n == "03") return "Mar.";
-    if(n == "04") return "Apr.";
+  monthText(n) {
+    if(n == "01") return "Jan";
+    if(n == "02") return "Feb";
+    if(n == "03") return "Mar";
+    if(n == "04") return "Apr";
     if(n == "05") return "May";
     if(n == "06") return "June";
     if(n == "07") return "July";
-    if(n == "08") return "Aug.";
-    if(n == "09") return "Sept.";
-    if(n == "10") return "Oct.";
-    if(n == "11") return "Nov.";
-    if(n == "12") return "Dec.";
+    if(n == "08") return "Aug";
+    if(n == "09") return "Sept";
+    if(n == "10") return "Oct";
+    if(n == "11") return "Nov";
+    if(n == "12") return "Dec";
   }
 
   addSlider() {
