@@ -1,8 +1,8 @@
 "use strict";
 
 class ParenMap {
-  constructor(map, config) {
-    this.map = typeof map === "object" ? map : document.querySelector(map);
+  constructor(config) {
+    this.map = document.querySelector(".usa-map");
     this.states = this.map.querySelectorAll("path");
     this.pins = document.querySelector(".usa-map-pins");
     this.url = config.url;
@@ -132,7 +132,7 @@ class ParenMap {
           labels: this.chargingChartValues.xAxis,
           data: this.chargingChartValues.data,
           primaryColor: "#22C55D",
-          bgColor: "rgba(23, 183, 134, 0.07)",
+          bgColor: "rgba(23, 183, 134, 0.25)",
         }),
         options: this.setChartOptions({})
       });
@@ -183,8 +183,6 @@ class ParenMap {
 }
 
   setChartData(config) {
-      console.log(this.setMonths(config.labels));
-
     return {
       labels: this.distributeEvenly(this.setMonths(config.labels)),
       datasets: [{
@@ -193,7 +191,19 @@ class ParenMap {
         borderWidth: config.borderWidth ? config.borderWidth : 1,
         borderColor: [config.primaryColor ? config.primaryColor : "#6100FF"],
         fill: config.fill ? config.fill : true,
-        backgroundColor: config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.07)",
+        backgroundColor: (context) => {
+          console.log();
+          if(!context.chart.chartArea) return;
+          const {ctx, data, chartArea: {top, bottom}} = context.chart;
+          const gradient = ctx.createLinearGradient(0, top, 0, bottom)
+          gradient.addColorStop(0, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(0.25, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(0.5, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(0.75, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+          return gradient;
+          
+        },
         tension: config.tension ? config.tension : 0.5,
         pointRadius: config.pointRadius ? config.pointRadius : 3.5,
         pointBackgroundColor: config.primaryColor ? config.primaryColor : "#6100FF",
@@ -207,14 +217,13 @@ class ParenMap {
       responsive: true,
       maintainAspectRatio: false,
       scales: {
-        y: { 
+        y: {
           grid: {color: config.color ? config.color : "#4B4D63"},
           border: { dash: config.dash ? config.dash : [4, 5]},  
-          beginAtZero: config.beginAtZero ? config.beginAtZero : true,
+          // beginAtZero: config.beginAtZero ? config.beginAtZero : true,
           ticks: { color: config.color ? config.color : "#4B4D63"},
-          suggestedMax: config.suggestedMax ? config.suggestedMax : 40,
-         },
-         x: {
+        },
+        x: {
           grid: {color: "rgba(0, 0, 0, 0)"},
           ticks: { 
             autoSkip: false,
@@ -303,7 +312,7 @@ class ParenMap {
   }
 }
 
-const mapUSA = new ParenMap("#usa-map", {
+const mapUSA = new ParenMap({
   url: "./json/statechart.json",
   onReady: function () {
     console.log("Ready 🚀");

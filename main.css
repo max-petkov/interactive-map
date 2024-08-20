@@ -42,12 +42,12 @@ section {
     position: relative;
 }
 
-#usa-map {
+.usa-map {
     width: 100%;
     height: auto;
 }
 
-#usa-map path {
+.usa-map path {
     stroke: rgba(234, 228, 255, 0.15);
     stroke-width: 0.8px;
     fill: rgba(255, 255, 255, 0.08);
@@ -56,19 +56,19 @@ section {
     cursor: not-allowed;
 }
 
-#usa-map path.has-data {
+.usa-map path.has-data {
     pointer-events: auto;
     opacity: 1;
     cursor: pointer;
 }
 
-#usa-map path.has-data:hover {
+.usa-map path.has-data:hover {
     stroke: rgba(234, 228, 255, 0.3);
     fill: rgba(255, 255, 255, 0.10);
 }
 
-#usa-map path.has-data.active,
-#usa-map path.has-data.active:hover {
+.usa-map path.has-data.active,
+.usa-map path.has-data.active:hover {
     stroke: rgba(234, 228, 255, 0.5);
     fill: rgba(255, 255, 255, 0.15);
     cursor: default;
