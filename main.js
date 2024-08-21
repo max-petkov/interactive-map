@@ -11,11 +11,12 @@ class ParenMap {
     this.search = null;
     this.searchableStates = [];
     this.utilizationChart = null;
-    this.utilizationChartValues = {xAxis: null, data: null};
+    this.selectedUtilizationChartValues = {xAxis: null, data: null, name: null};
+    this.comparisonUtilizationChartValues = {data: null, name: null};
     this.chargingChart = null;
-    this.chargingChartValues = {xAxis: null, data: null};
+    this.selectedChargingChartValues = {xAxis: null, data: null};
     this.sessionsChart = null;
-    this.sessionsChartValues = {xAxis: null, data: null};
+    this.selectedSessionsChartValues = {xAxis: null, data: null};
     this.cbReady = config.onReady || function () {};
     this.cbError = config.onError || function () {};
     this.stateName = document.querySelector("[data-state-name]");
@@ -54,30 +55,6 @@ class ParenMap {
     });
   }
 
-  showStatesDataOnClick() {
-    this.states.forEach(state => {        
-        if (!state.classList.contains("has-data")) return;
-
-        state.addEventListener("click", () => {            
-            if(state.classList.contains("active")) return;
-        
-            this.data.countries[0].states.forEach((data) => {
-            if (data.stateCode.toLowerCase() === state.id.toLowerCase()) {
-                this.map.nextElementSibling.classList.remove("active");
-                if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
-                if(this.pins.querySelector("path.active")) this.pins.querySelector("path.active").classList.remove("active");
-                state.classList.add("active");
-                this.pins.getElementById(state.id.toUpperCase()).classList.add("active");
-
-                this.renderData(data);
-                this.setChartValues(data);
-                this.addCharts();
-            }
-            });
-            });
-    });
-  }
-
   showUSADataOnClick() {
     // ⚡ TBD
     document
@@ -110,27 +87,149 @@ class ParenMap {
     this.search = search;
   }
 
+  showStatesDataOnClick() {
+    this.states.forEach(state => {        
+        if (!state.classList.contains("has-data")) return;
+
+        state.addEventListener("click", () => {            
+            if(state.classList.contains("active")) return;
+        
+            this.data.countries[0].states.forEach((selectedData) => {
+            if (selectedData.stateCode.toLowerCase() === state.id.toLowerCase()) {
+                this.map.nextElementSibling.classList.remove("active");
+                if(this.map.querySelector("path.active")) this.map.querySelector("path.active").classList.remove("active");
+                if(this.pins.querySelector("path.active")) this.pins.querySelector("path.active").classList.remove("active");
+                state.classList.add("active");
+                this.pins.getElementById(state.id.toUpperCase()).classList.add("active");
+
+                this.renderData(selectedData, this.data);
+                this.setChartValues(selectedData, this.data);
+                this.addCharts();
+            }
+            });
+            });
+    });
+  }
+
+  setChartValues(selectedData, comparisonData) {    
+    this.selectedUtilizationChartValues.name = selectedData.state;
+    this.selectedUtilizationChartValues.xAxis = selectedData.utilization.xAxis.split(",");
+    this.selectedUtilizationChartValues.data = selectedData.utilization.data.split(",");
+        
+    this.comparisonUtilizationChartValues.name = comparisonData.countries[0].country;
+    this.comparisonUtilizationChartValues.data = comparisonData.countries[0].utilization.data.split(",");
+
+    this.selectedChargingChartValues.xAxis = selectedData.chargingTime.xAxis.split(",");
+    this.selectedChargingChartValues.data = selectedData.chargingTime.data.split(",");          
+    this.selectedSessionsChartValues.xAxis = selectedData.sessions.xAxis.split(",");
+    this.selectedSessionsChartValues.data = selectedData.sessions.data.split(","); 
+  }
+
   addCharts() {
     if(this.utilizationChart) this.utilizationChart.destroy();
     if(this.chargingChart) this.chargingChart.destroy();
-    if(this.sessionsChart) this.sessionsChart.destroy();
+    if(this.sessionsChart) this.sessionsChart.destroy(); 
     
     this.utilizationChart = new Chart(document.getElementById('utilization-chart'), {
       type: 'line',
-      data: this.setChartData({
-        label: "Utilization",
-        labels: this.utilizationChartValues.xAxis,
-        data: this.utilizationChartValues.data,
-      }),
-      options: this.setChartOptions({})
+      data: {
+        labels: this.distributeEvenly(this.setMonths(this.selectedUtilizationChartValues.xAxis)),
+        datasets: [
+          {
+            label: this.comparisonUtilizationChartValues.name,
+            data: this.comparisonUtilizationChartValues.data,
+            borderWidth: 1,
+            borderColor: "#22C55D",
+            borderDash: [5, 5],
+            fill: true,
+            backgroundColor: (context) => {
+              if(!context.chart.chartArea) return;
+              const {ctx, chartArea: {top, bottom}} = context.chart;
+              const gradient = ctx.createLinearGradient(0, top, 0, bottom)
+              gradient.addColorStop(0, "rgba(23, 183, 134, 0.20)");
+              gradient.addColorStop(0.25, "rgba(23, 183, 134, 0.20)");
+              gradient.addColorStop(0.5, "rgba(23, 183, 134, 0.20)");
+              gradient.addColorStop(0.75, "rgba(23, 183, 134, 0.20)");
+              gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+              return gradient;
+              
+            },
+            tension: 0.5,
+            pointRadius: 3.5,
+            pointBackgroundColor: "#22C55D",
+            pointBorderColor: "#000000",
+          },
+          {
+          label: this.selectedUtilizationChartValues.name,
+          data: this.selectedUtilizationChartValues.data,
+          borderWidth: 1,
+          borderColor: "#6100FF",
+          fill: true,
+          backgroundColor: (context) => {
+            if(!context.chart.chartArea) return;
+            const {ctx, chartArea: {top, bottom}} = context.chart;
+            const gradient = ctx.createLinearGradient(0, top, 0, bottom)
+            gradient.addColorStop(0, "rgba(61, 75, 224, 0.25)");
+            gradient.addColorStop(0.25, "rgba(61, 75, 224, 0.25)");
+            gradient.addColorStop(0.5, "rgba(61, 75, 224, 0.25)");
+            gradient.addColorStop(0.75, "rgba(61, 75, 224, 0.25)");
+            gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+            return gradient;
+            
+          },
+          tension: 0.5,
+          pointRadius: 3.5,
+          pointBackgroundColor: "#6100FF",
+          pointBorderColor: "#000000",
+        },
+      ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            grid: {color: "#4B4D63"},
+            border: { dash: [4, 5]},  
+            beginAtZero:  true,
+            suggestedMax: 100,
+            ticks: { color: "#4B4D63"},
+          },
+          x: {
+            grid: {color: "rgba(0, 0, 0, 0)"},
+            ticks: { 
+              autoSkip: false,
+              align: "center",
+              maxRotation: 0,
+              minRotation: 0,
+            }
+           }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: { 
+            padding: 6,
+            footerFont: { weight: "regular"},
+            footerMarginTop: 10,
+            callbacks: {
+              title: (data) => {              
+                return data[0].dataset.label;
+              },
+              label: (data) => {     
+                return data.raw;
+              }
+            }
+           }
+        }
+      }
     });
     
       this.chargingChart = new Chart(document.getElementById('charging-chart'), {
         type: 'line',
         data: this.setChartData({
           label: "Charging time",
-          labels: this.chargingChartValues.xAxis,
-          data: this.chargingChartValues.data,
+          labels: this.selectedChargingChartValues.xAxis,
+          data: this.selectedChargingChartValues.data,
           primaryColor: "#22C55D",
           bgColor: "rgba(23, 183, 134, 0.25)",
         }),
@@ -141,11 +240,40 @@ class ParenMap {
         type: 'line',
         data: this.setChartData({
           label: "Sessions",
-          labels: this.sessionsChartValues.xAxis,
-          data: this.sessionsChartValues.data,
+          labels: this.selectedSessionsChartValues.xAxis,
+          data: this.selectedSessionsChartValues.data,
         }),
         options: this.setChartOptions({})
       });
+  }
+
+  setChartData(config) {
+    return {
+      labels: this.distributeEvenly(this.setMonths(config.labels)),
+      datasets: [{
+        label: config.label ? config.label : "",
+        data: config.data,
+        borderWidth: config.borderWidth ? config.borderWidth : 1,
+        borderColor: [config.primaryColor ? config.primaryColor : "#6100FF"],
+        fill: config.fill ? config.fill : true,
+        backgroundColor: (context) => {
+          if(!context.chart.chartArea) return;
+          const {ctx, data, chartArea: {top, bottom}} = context.chart;
+          const gradient = ctx.createLinearGradient(0, top, 0, bottom)
+          gradient.addColorStop(0, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(0.25, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(0.5, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(0.75, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
+          gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+          return gradient;
+          
+        },
+        tension: config.tension ? config.tension : 0.5,
+        pointRadius: config.pointRadius ? config.pointRadius : 3.5,
+        pointBackgroundColor: config.primaryColor ? config.primaryColor : "#6100FF",
+        pointBorderColor: config.pointBorderColor ? config.pointBorderColor : "#000000",
+      }]
+    };
   }
 
   setMonths(arr) {
@@ -182,36 +310,6 @@ class ParenMap {
     return result;
 }
 
-  setChartData(config) {
-    return {
-      labels: this.distributeEvenly(this.setMonths(config.labels)),
-      datasets: [{
-        label: config.label ? config.label : "",
-        data: config.data,
-        borderWidth: config.borderWidth ? config.borderWidth : 1,
-        borderColor: [config.primaryColor ? config.primaryColor : "#6100FF"],
-        fill: config.fill ? config.fill : true,
-        backgroundColor: (context) => {
-          console.log();
-          if(!context.chart.chartArea) return;
-          const {ctx, data, chartArea: {top, bottom}} = context.chart;
-          const gradient = ctx.createLinearGradient(0, top, 0, bottom)
-          gradient.addColorStop(0, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
-          gradient.addColorStop(0.25, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
-          gradient.addColorStop(0.5, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
-          gradient.addColorStop(0.75, config.bgColor ? config.bgColor : "rgba(61, 75, 224, 0.25)");
-          gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
-          return gradient;
-          
-        },
-        tension: config.tension ? config.tension : 0.5,
-        pointRadius: config.pointRadius ? config.pointRadius : 3.5,
-        pointBackgroundColor: config.primaryColor ? config.primaryColor : "#6100FF",
-        pointBorderColor: config.pointBorderColor ? config.pointBorderColor : "#000000",
-      }]
-    };
-  }
-
   setChartOptions(config) {
     return {
       responsive: true,
@@ -221,6 +319,7 @@ class ParenMap {
           grid: {color: config.color ? config.color : "#4B4D63"},
           border: { dash: config.dash ? config.dash : [4, 5]},  
           // beginAtZero: config.beginAtZero ? config.beginAtZero : true,
+          suggestedMax: 100,
           ticks: { color: config.color ? config.color : "#4B4D63"},
         },
         x: {
@@ -260,15 +359,6 @@ class ParenMap {
     this.portsNeviFunded.textContent = data.ports.funding.nevi;
     this.utilizationRate.textContent = data.utilization.current + "%";
     this.dataChargingTimeAvg.textContent = data.chargingTime.avg + " min";
-  }
-
-  setChartValues(data) {
-    this.utilizationChartValues.xAxis = data.utilization.xAxis.split(",");
-    this.utilizationChartValues.data = data.utilization.data.split(",");          
-    this.chargingChartValues.xAxis = data.chargingTime.xAxis.split(",");
-    this.chargingChartValues.data = data.chargingTime.data.split(",");          
-    this.sessionsChartValues.xAxis = data.sessions.xAxis.split(",");
-    this.sessionsChartValues.data = data.sessions.data.split(","); 
   }
 
   monthText(n) {
