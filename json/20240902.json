@@ -1,0 +1,2136 @@
+{
+  "asOfDate": "20240902",
+  "countries": [
+    {
+      "countryCode": "US",
+      "country": "United States",
+      "station": {
+        "count": 7506,
+        "upcoming": 1,
+        "xAxis": "2023-01,2023-02,...",
+        "data": "6899, 6917,..."
+      },
+      "ports": {
+        "count": 19563,
+        "nevi": 62,
+        "xAxis": "2023-01,2023-02, ...",
+        "data": "33953, 34267, ..."
+      },
+      "reliability": {
+        "score": 79.0,
+        "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+        "data": "83, 84, 84, 83, 84, 83, 83, 83, 83, 83, 83, 82, 82, 82, 82, 82, 81, 81, 80, 80, 80, 79, 81, 79, 74, 75, 79",
+        "down": 1618,
+        "pctDown": 13.18,
+        "lowScore": 64,
+        "lowScoreState": "FL",
+        "highScore": 92,
+        "highScoreState": "RI"
+      },
+      "utilization": {
+        "current": 18.2,
+        "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+        "data": "17.06, 17.26, 16.97, 17.37, 17.58, 17.97, 16.76, 16.81, 17.05, 17.05, 17.11, 17.05, 17.69, 17.09, 17.41, 17.59, 17.85, 17.84, 18.21, 17.70, 17.94, 17.87, 18.60, 17.90, 17.82, 18.23, 18.20"
+      },
+      "chargingTime": {
+        "avg": 37.41,
+        "ccsAvg": 37.45,
+        "chaAvg": 36.11,
+        "nacsAvg": 0.0,
+        "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+        "data": "40.12, 40.28, 39.48, 40.37, 39.72, 39.89, 38.61, 38.41, 38.80, 38.61, 38.80, 38.53, 38.76, 38.71, 38.07, 37.89, 38.05, 38.06, 38.26, 37.96, 38.14, 38.18, 38.81, 38.42, 37.89, 37.51, 37.41"
+      },
+      "price": {
+        "price": -1.0
+      },
+      "sessions": {
+        "current": 581558,
+        "xAxisMonth": "March,,,April,,,May,,,June,,,,July,,,August,,,",
+        "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+        "data": "463709, 471416, 477073, 481876, 495843, 506704, 489640, 494625, 499728, 493397, 505826, 498496, 506319, 512589, 521953, 535167, 551815, 548699, 566122, 553648, 552819, 554411, 517630, 558819, 553930, 578906, 581558"
+      },
+      "states": [
+        {
+          "stateCode": "AL",
+          "state": "Alabama",
+          "station": {
+            "count": 85,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 206,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "AK",
+          "state": "Alaska",
+          "station": {
+            "count": 18,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 27,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "AZ",
+          "state": "Arizona",
+          "station": {
+            "count": 97,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 250,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "AR",
+          "state": "Arkansas",
+          "station": {
+            "count": 37,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 90,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "CA",
+          "state": "California",
+          "station": {
+            "count": 1549,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 5136,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": 77.0,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 82, 82, 81, 81, 79, 80, 79, 78, 79, 77, 74, 75, 77",
+            "down": 580,
+            "pctDown": 15.8
+          },
+          "utilization": {
+            "current": 25.65,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "23.80, 24.37, 24.25, 23.85, 24.79, 25.05, 24.01, 24.42, 24.81, 24.98, 24.91, 25.07, 25.60, 25.02, 25.26, 25.69, 25.47, 25.27, 25.91, 25.29, 25.43, 25.91, 25.63, 25.49, 25.21, 25.76, 25.65"
+          },
+          "chargingTime": {
+            "avg": 36.46,
+            "ccsAvg": 36.47,
+            "chaAvg": 36.06,
+            "nacsAvg": 0.0,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "38.56, 38.83, 38.24, 38.70, 38.60, 38.50, 37.76, 37.45, 37.83, 37.92, 38.01, 38.03, 38.53, 38.27, 37.61, 37.46, 37.57, 37.44, 37.70, 37.41, 37.78, 37.89, 38.49, 37.74, 37.33, 36.81, 36.46"
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": 251841,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "210090, 214634, 217940, 213341, 222086, 225742, 221199, 226232, 228858, 227835, 230718, 229585, 229192, 232452, 236066, 241194, 242441, 240676, 247483, 242279, 239877, 243903, 220302, 242033, 239804, 249826, 251841"
+          }
+        },
+        {
+          "stateCode": "CO",
+          "state": "Colorado",
+          "station": {
+            "count": 260,
+            "upcoming": 1
+          },
+          "ports": {
+            "count": 636,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "CT",
+          "state": "Connecticut",
+          "station": {
+            "count": 109,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 234,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "DC",
+          "state": "District of Columbia",
+          "station": {
+            "count": 7,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 30,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "DE",
+          "state": "Delaware",
+          "station": {
+            "count": 28,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 56,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "FL",
+          "state": "Florida",
+          "station": {
+            "count": 359,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 1026,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": 77.0,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "81, 83, 82, 84, 83, 83, 82, 82, 82, 82, 82, 80, 81, 81, 81, 79, 77, 77, 77, 78, 79, 77, 78, 75, 75, 74, 77",
+            "down": 80,
+            "pctDown": 17.66
+          },
+          "utilization": {
+            "current": 23.34,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "23.17, 22.98, 24.31, 23.67, 24.21, 24.73, 23.71, 23.79, 23.82, 24.11, 23.35, 22.75, 23.82, 23.39, 23.81, 22.37, 23.26, 22.79, 23.72, 23.05, 24.15, 23.36, 23.00, 22.49, 23.40, 23.62, 23.34"
+          },
+          "chargingTime": {
+            "avg": 37.96,
+            "ccsAvg": 37.96,
+            "chaAvg": 38.25,
+            "nacsAvg": 0.0,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "38.59, 38.79, 38.86, 39.20, 38.47, 38.78, 38.26, 37.77, 38.22, 38.33, 38.33, 38.00, 38.14, 38.37, 37.89, 37.54, 37.95, 37.97, 38.55, 38.24, 38.16, 38.58, 39.38, 39.06, 38.18, 37.68, 37.96"
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": 26867,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "24661, 24898, 26566, 25860, 26776, 27130, 26511, 27298, 27229, 27205, 26963, 26072, 26650, 27147, 27184, 26013, 27267, 26527, 27348, 26627, 27690, 26548, 23410, 25210, 26530, 27423, 26867"
+          }
+        },
+        {
+          "stateCode": "GA",
+          "state": "Georgia",
+          "station": {
+            "count": 255,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 568,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "HI",
+          "state": "Hawaii",
+          "station": {
+            "count": 42,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 93,
+            "nevi": 12
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "ID",
+          "state": "Idaho",
+          "station": {
+            "count": 40,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 92,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "IL",
+          "state": "Illinois",
+          "station": {
+            "count": 185,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 434,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "IN",
+          "state": "Indiana",
+          "station": {
+            "count": 122,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 293,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "IA",
+          "state": "Iowa",
+          "station": {
+            "count": 105,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 236,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "KS",
+          "state": "Kansas",
+          "station": {
+            "count": 38,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 90,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "KY",
+          "state": "Kentucky",
+          "station": {
+            "count": 41,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 104,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "LA",
+          "state": "Louisiana",
+          "station": {
+            "count": 39,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 84,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "ME",
+          "state": "Maine",
+          "station": {
+            "count": 45,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 85,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MD",
+          "state": "Maryland",
+          "station": {
+            "count": 222,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 493,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MA",
+          "state": "Massachusetts",
+          "station": {
+            "count": 168,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 417,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MI",
+          "state": "Michigan",
+          "station": {
+            "count": 245,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 528,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MN",
+          "state": "Minnesota",
+          "station": {
+            "count": 163,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 337,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MS",
+          "state": "Mississippi",
+          "station": {
+            "count": 36,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 74,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MO",
+          "state": "Missouri",
+          "station": {
+            "count": 145,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 329,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "MT",
+          "state": "Montana",
+          "station": {
+            "count": 24,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 69,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NE",
+          "state": "Nebraska",
+          "station": {
+            "count": 51,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 97,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NV",
+          "state": "Nevada",
+          "station": {
+            "count": 67,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 181,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NH",
+          "state": "New Hampshire",
+          "station": {
+            "count": 38,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 77,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NJ",
+          "state": "New Jersey",
+          "station": {
+            "count": 169,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 411,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NM",
+          "state": "New Mexico",
+          "station": {
+            "count": 75,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 170,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NY",
+          "state": "New York",
+          "station": {
+            "count": 297,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 863,
+            "nevi": 16
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "NC",
+          "state": "North Carolina",
+          "station": {
+            "count": 193,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 441,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "ND",
+          "state": "North Dakota",
+          "station": {
+            "count": 30,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 52,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "OH",
+          "state": "Ohio",
+          "station": {
+            "count": 237,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 490,
+            "nevi": 12
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "OK",
+          "state": "Oklahoma",
+          "station": {
+            "count": 177,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 478,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "OR",
+          "state": "Oregon",
+          "station": {
+            "count": 177,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 465,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "PA",
+          "state": "Pennsylvania",
+          "station": {
+            "count": 182,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 405,
+            "nevi": 8
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "PR",
+          "state": "Puerto Rico",
+          "station": {
+            "count": 0,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 0,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "RI",
+          "state": "Rhode Island",
+          "station": {
+            "count": 24,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 51,
+            "nevi": 8
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "SC",
+          "state": "South Carolina",
+          "station": {
+            "count": 86,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 205,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "SD",
+          "state": "South Dakota",
+          "station": {
+            "count": 26,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 52,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "TN",
+          "state": "Tennessee",
+          "station": {
+            "count": 104,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 262,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "TX",
+          "state": "Texas",
+          "station": {
+            "count": 394,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 1095,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": 78.0,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "83, 83, 83, 84, 84, 84, 84, 83, 84, 84, 84, 83, 83, 82, 82, 83, 82, 81, 80, 77, 79, 78, 79, 76, 74, 75, 78",
+            "down": 65,
+            "pctDown": 10.52
+          },
+          "utilization": {
+            "current": 18.02,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "18.59, 18.17, 17.86, 17.56, 17.75, 18.77, 19.12, 17.47, 17.34, 17.01, 17.56, 17.45, 18.47, 17.58, 17.98, 18.16, 18.16, 18.55, 18.40, 16.26, 17.14, 16.71, 19.10, 17.85, 18.93, 19.21, 18.02"
+          },
+          "chargingTime": {
+            "avg": 42.4,
+            "ccsAvg": 42.51,
+            "chaAvg": 38.07,
+            "nacsAvg": 0.0,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "43.08, 42.95, 42.26, 42.63, 41.86, 41.94, 41.40, 41.37, 42.16, 42.56, 42.30, 42.35, 42.05, 42.69, 42.23, 41.91, 43.08, 42.65, 42.78, 43.50, 42.46, 42.43, 43.40, 43.34, 42.67, 42.14, 42.40"
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": 25007,
+            "xAxis": "20240303, 20240310, 20240317, 20240324, 20240331, 20240407, 20240414, 20240421, 20240428, 20240505, 20240512, 20240519, 20240526, 20240602, 20240609, 20240616, 20240623, 20240630, 20240707, 20240714, 20240721, 20240728, 20240804, 20240811, 20240818, 20240825, 20240901",
+            "data": "19372, 19413, 20139, 20365, 21216, 22820, 23908, 21965, 21650, 20883, 22386, 22028, 23168, 22889, 23654, 24263, 24058, 24701, 25139, 21833, 23217, 22735, 23542, 24598, 25617, 26449, 25007"
+          }
+        },
+        {
+          "stateCode": "UT",
+          "state": "Utah",
+          "station": {
+            "count": 79,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 188,
+            "nevi": 8
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "VT",
+          "state": "Vermont",
+          "station": {
+            "count": 62,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 116,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "VA",
+          "state": "Virginia",
+          "station": {
+            "count": 180,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 495,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "WA",
+          "state": "Washington",
+          "station": {
+            "count": 264,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 680,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "WV",
+          "state": "West Virginia",
+          "station": {
+            "count": 16,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 23,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "WI",
+          "state": "Wisconsin",
+          "station": {
+            "count": 96,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 205,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        },
+        {
+          "stateCode": "WY",
+          "state": "Wyoming",
+          "station": {
+            "count": 18,
+            "upcoming": 0
+          },
+          "ports": {
+            "count": 44,
+            "nevi": 0
+          },
+          "reliability": {
+            "score": -1.0,
+            "xAxis": "",
+            "data": "",
+            "down": -1,
+            "pctDown": -1.0
+          },
+          "utilization": {
+            "current": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "chargingTime": {
+            "avg": -1.0,
+            "ccsAvg": -1.0,
+            "chaAvg": -1.0,
+            "nacsAvg": -1.0,
+            "xAxis": "",
+            "data": ""
+          },
+          "price": {
+            "price": -1.0
+          },
+          "sessions": {
+            "current": -1,
+            "xAxis": "",
+            "data": ""
+          }
+        }
+      ]
+    }
+  ]
+}
